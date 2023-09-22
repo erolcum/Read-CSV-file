@@ -8,11 +8,11 @@ class Program
         if (File.Exists(filePath))
         {
             int lineCount = 0;
-            StreamReader sr = new StreamReader(filePath);
+            StreamReader sr = new StreamReader(filePath); //correct usage in Program-2.cs
 
             while (sr.Read() > 0) //or check !sr.EndOfStream
             {
-                var ss = sr.ReadLine().Split(','); //does't work.
+                var ss = sr.ReadLine().Split(','); //does't work
                 lineCount++;
                 //Console.WriteLine(ss[0]);  //it prints asan instead of Hasan
             }

@@ -9,13 +9,12 @@ class Program
         if (File.Exists(filePath))
         {
             int lineCount = 0;
-            StreamReader sr = new StreamReader(filePath); //correct usage in Program-2.cs
-
+            StreamReader sr = new StreamReader(filePath); 
             while (sr.Read() > 0) //or check !sr.EndOfStream or check (WholeLine=sr.ReadLine())!=null
             {
                 var ss = sr.ReadLine().Split(','); //does't work
                 lineCount++;
-                //Console.WriteLine(ss[0]);  //it prints asan instead of Hasan
+                //Console.WriteLine(ss[0]);  //it prints asan instead of Hasan, it is because of sr.Read() > 0 I think
             }
             sr.Close();
 

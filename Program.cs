@@ -4,13 +4,14 @@ class Program
 {
     static void Main()
     {
-        string filePath = "test.txt";
+        string s = Application.StartupPath;
+        string filePath = s+ @"\text.txt";
         if (File.Exists(filePath))
         {
             int lineCount = 0;
             StreamReader sr = new StreamReader(filePath); //correct usage in Program-2.cs
 
-            while (sr.Read() > 0) //or check !sr.EndOfStream
+            while (sr.Read() > 0) //or check !sr.EndOfStream or check WholeLine=sr.ReadLine())!=null
             {
                 var ss = sr.ReadLine().Split(','); //does't work
                 lineCount++;
